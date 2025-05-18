@@ -37,7 +37,7 @@ function SideNavigation() {
       <div className="p-4 flex items-center justify-between border-b border-[#D9D9D9]">
         {!collapsed && (
           <img
-            src="public/saturn.svg"
+            src="/saturn.svg"
             alt="Saturn"
             className="w-[67.27px] h-[12px] object-contain"
           />
@@ -94,7 +94,7 @@ function SideNavigation() {
         <div className="flex items-center p-2 rounded-md hover:bg-gray-100">
           <div className="w-8 h-8 rounded-full bg-gray-300 flex items-center justify-center mr-3 overflow-hidden">
             <img
-              src="public/profile-icon.jpg"
+              src="/profile-icon.jpg"
               className="w-full h-full object-cover rounded-full"
               alt="Profile"
             />
@@ -107,7 +107,7 @@ function SideNavigation() {
         <button className="mt-2 flex items-center w-full px-2 py-2 text-sm text-gray-500 rounded-md hover:bg-gray-100 group">
           <div className="w-8 h-8 rounded-full bg-gray-300 flex items-center justify-center mr-3 overflow-hidden">
             <img
-              src="public/help-icon.svg"
+              src="/help-icon.svg"
               className="w-full h-full object-cover rounded-full"
               alt="Profile"
             />

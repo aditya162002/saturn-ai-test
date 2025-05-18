@@ -151,7 +151,7 @@ function MeetingSummary({
               />
               <span>Meeting transcript</span>
               <img
-                src="public/chevron-left.svg"
+                src="/chevron-left.svg"
                 alt="chevron left"
                 className="w-4 h-4 ml-2"
               />
