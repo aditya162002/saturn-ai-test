@@ -8,7 +8,8 @@ import {
 } from "@heroicons/react/24/outline";
 import { ArrowRightIcon } from "@heroicons/react/20/solid";
 import MeetingTranscript from "./MeetingTranscript";
-
+import mockData from "../mockdata.json";
+import SortableFacts from "./MeetingDetails";
 interface MeetingSummaryProps {
   onToggleTranscript: () => void;
   showTranscript: boolean;
@@ -18,7 +19,9 @@ function MeetingSummary({
   onToggleTranscript,
   showTranscript,
 }: MeetingSummaryProps) {
-  const [expandedSections, setExpandedSections] = useState<Record<number, boolean>>({
+  const [expandedSections, setExpandedSections] = useState<
+    Record<number, boolean>
+  >({
     0: true,
     1: true,
     2: true,
@@ -33,11 +36,13 @@ function MeetingSummary({
     }));
   };
 
-  const financialPlanningSections = Array(5).fill(null).map((_, index) => ({
-    id: index,
-    title: "Financial planning",
-    items: ["Goals", "Risk Tolerance"],
-  }));
+  const financialPlanningSections = Array(5)
+    .fill(null)
+    .map((_, index) => ({
+      id: index,
+      title: "Financial planning",
+      items: ["Goals", "Risk Tolerance"],
+    }));
 
   return (
     <div className="flex-1 flex flex-col overflow-y-auto">
@@ -81,7 +86,9 @@ function MeetingSummary({
 
       <div className="flex-1 p-6 flex">
         <div className="w-72 pr-6 flex-shrink-0">
-          <h2 className="text-lg font-medium text-gray-800 mb-4">Meeting summary</h2>
+          <h2 className="text-lg font-medium text-gray-800 mb-4">
+            Meeting summary
+          </h2>
 
           <div className="space-y-4">
             {financialPlanningSections.map((section, index) => (
@@ -113,22 +120,27 @@ function MeetingSummary({
         </div>
 
         <div className="flex-1 max-w-3xl">
-          <div className="bg-white border border-gray-200 rounded-lg shadow-sm p-6">
+          <div className="bg-white border border-gray-200 rounded-lg shadow-sm p-6 overflow-y-auto max-h-[700px]">
             <div className="flex items-center text-gray-400 text-xs mb-4">
               <span>Curated by CoPlanner at 12:32 PM, 28 Dec 2024</span>
             </div>
-
-            <h2 className="text-2xl font-medium text-gray-900 mb-8">Meeting Summary</h2>
-
-            {[...Array(4)].map((_, index) => (
-              <div key={index} className="mb-8 border-l-2 border-gray-200 pl-4">
-                <p className="text-gray-700">
-                  Explored various investment options and the importance of a
-                  diversified portfolio tailored to the client's risk tolerance
-                  and financial goals.
-                </p>
-              </div>
-            ))}
+            <div className="space-y-6">
+              {mockData.sections.map((section) => (
+                <div key={section.header}>
+                  {section.sections.map((subsection) => (
+                    <div
+                      key={subsection.id}
+                      className="mb-8 pb-8 border-b border-gray-200 last:border-b-0"
+                    >
+                      <h3 className="text-xl font-medium text-gray-900 mb-4">
+                        {subsection.name}
+                      </h3>
+                      <SortableFacts subsection={subsection} />
+                    </div>
+                  ))}
+                </div>
+              ))}
+            </div>
           </div>
         </div>
 
