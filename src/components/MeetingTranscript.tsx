@@ -58,7 +58,7 @@ function MeetingTranscript({ onClose }: MeetingTranscriptProps) {
 
   return (
     <div
-      className="w-80 bg-white border ml-[2px] rounded-md border-gray-200 flex flex-col h-[80vh] overflow-auto
+      className="w-80 bg-white border ml-[2px] rounded-md border-gray-200 flex flex-col h-[90vh] overflow-auto
 "
     >
       <div className="p-4 border-b border-gray-200 flex items-center justify-between sticky top-0 bg-white z-10">

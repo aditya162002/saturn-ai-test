@@ -75,11 +75,12 @@ function MeetingSummary({
                 <span className="text-sm text-gray-700">Onboarding</span>
               </div>
             </div>
-
-            <button className="bg-[#0404D6] hover:bg-[#0303b8] text-white px-4 py-2 rounded-md flex items-center">
-              <span className="mr-2">Save document</span>
-              <ArrowRightIcon className="w-4 h-4" />
-            </button>
+            <div className="flex items-center space-x-4 ml-[-100px]">
+              <button className="bg-[#0404D6] hover:bg-[#0303b8] text-white px-4 py-2 rounded-md flex items-center">
+                <span className="mr-2">Save document</span>
+                <ArrowRightIcon className="w-4 h-4" />
+              </button>
+            </div>
           </div>
         </div>
       </div>
@@ -120,7 +121,7 @@ function MeetingSummary({
         </div>
 
         <div className="flex-1 max-w-3xl">
-          <div className="bg-white border border-gray-200 rounded-lg shadow-sm p-6 overflow-y-auto max-h-[700px]">
+          <div className="bg-white border border-gray-200 rounded-lg shadow-sm p-6 overflow-y-auto max-h-[700px] min-h-[90vh]">
             <div className="flex items-center text-gray-400 text-xs mb-4">
               <span>Curated by CoPlanner at 12:32 PM, 28 Dec 2024</span>
             </div>
